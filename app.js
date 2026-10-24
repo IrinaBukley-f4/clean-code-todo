@@ -71,17 +71,17 @@ const addTask = function () {
 
   taskInput.value = '';
 };
+addButton.addEventListener('click', addTask);
 
 const editTask = function () {
-
   const taskItem = this.parentNode;
 
   const editInput = taskItem.querySelector('input[type=text]');
   const label = taskItem.querySelector('label');
   const editBtn = taskItem.querySelector('.edit');
-  const isEditing  = taskItem.classList.contains('editMode');
+  const isEditing = taskItem.classList.contains('editMode');
 
-  if (isEditing ) {
+  if (isEditing) {
     label.innerText = editInput.value;
     //innerText encodes special characters, HTML does not.
     editBtn.innerText = 'Edit';
@@ -100,7 +100,6 @@ const deleteTask = function () {
 };
 
 const taskCompleted = function () {
-
   const taskItem = this.parentNode;
   completedTasksHolder.appendChild(taskItem);
   bindTaskEvents(taskItem, taskIncomplete);
